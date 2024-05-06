@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/start">
+    <fragment
+        android:id="@+id/start"
+        android:name="com.example.musicapp.FirstFragment"
+        tools:layout="@layout/fragment_first">
+
+
+        <action
+            android:id="@+id/to_login"
+            app:destination="@id/login"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/app"
+        android:name="com.example.musicapp.ListFragment"
+        tools:layout="@layout/item_note">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.musicapp.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/to_sign"
+            app:destination="@+id/sign"/>
+
+        <action
+            android:id="@+id/to_app"
+            app:destination="@+id/app"/>
+
+        <action
+            android:id="@+id/to_error_user"
+            app:destination="@id/error_nouser"/>
+
+        <action
+            android:id="@+id/to_forgot"
+            app:destination="@+id/forgot"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/sign"
+        android:name="com.example.musicapp.CreateFragment"
+        tools:layout="@layout/fragment_sign">
+
+        <action
+            android:id="@+id/to_login2"
+            app:destination="@id/login"/>
+
+        <action
+            android:id="@+id/to_error_password"
+            app:destination="@id/error_passwords"/>
+
+        <action
+            android:id="@+id/to_to_error_email"
+            app:destination="@id/error_email"/>
+
+        <action
+            android:id="@+id/to_created"
+            app:destination="@id/created"/>
+
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/error_passwords"
+        android:name="com.example.musicapp.CustomDialogErrorPassword"
+        tools:layout="@layout/fragment_dialog_error_password"/>
+
+    <dialog
+        android:id="@+id/error_email"
+        android:name="com.example.musicapp.CustomDialogErrorEmail"
+        tools:layout="@layout/diaolg_error_email"/>
+
+    <dialog
+        android:id="@+id/created"
+        android:name="com.example.musicapp.CustomDialogCreated"
+        tools:layout="@layout/dialog_created"/>
+
+    <dialog
+        android:id="@+id/error_nouser"
+        android:name="com.example.musicapp.CustomDialogNoUser"
+        tools:layout="@layout/dialog_nouser"/>
+
+    <dialog
+        android:id="@+id/forgot"
+        android:name="com.example.musicapp.CustomDialogForgot"
+        tools:layout="@layout/dialog_forgot"/>
+
+</navigation>

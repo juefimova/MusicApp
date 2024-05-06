@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E070F">
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/pic_person"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pic_person"
+        android:text="Hey, Julia!"
+        android:letterSpacing="0.07"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hey"
+        android:text="Find the best songs"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp" />
+
+
+
+
+        <!--<com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hello"
+            android:layout_marginStart="10dp"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeColor="@color/white"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
+            >-->
+
+            <!--<com.google.android.material.textfield.TextInputEditText
+
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Looking for..."
+                android:textSize="20sp"
+
+            android:drawableRight="@drawable/search"/>-->
+            <androidx.appcompat.widget.SearchView
+                android:id="@id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hello"
+                />
+
+        <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="128dp"
+        android:layout_height="131dp"
+        android:orientation="vertical"
+        android:paddingStart="23dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pic_rock"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/rock" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:text="Rock"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pic_rock" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="23dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintStart_toEndOf="@+id/linear1"
+        app:layout_constraintTop_toBottomOf="@+id/search">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pic_pop"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/pop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:text="Pop"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pic_rock" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="23dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        app:layout_constraintStart_toEndOf="@+id/linear2"
+        app:layout_constraintTop_toBottomOf="@+id/search">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pic_rap"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/rap" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:text="Rap"
+            android:textStyle="bold"
+
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pic_rock" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        android:text="Popular Now"
+        android:letterSpacing="0.07"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="16px"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="5dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/popular"
+        app:spanCount="2"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
