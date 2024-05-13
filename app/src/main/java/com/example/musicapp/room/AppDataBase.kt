@@ -7,7 +7,7 @@ import com.example.musicapp.model.*
 
 @Database(entities = [
     PersonMusic::class, RoomMusic::class, RoomUser::class,
-    RockType:: class, PopType:: class, RapType:: class
+    RockType:: class, PopType:: class, RapType:: class, RoomUserFriends:: class
     ], version = 1
     )
 abstract class AppDataBase : RoomDatabase() {
@@ -23,5 +23,7 @@ abstract class AppDataBase : RoomDatabase() {
     abstract fun popTypeDao(): PopTypeDao
 
     abstract fun rapTypeDao(): RapTypeDao
+
+    abstract fun roomUserFriendsDao(): RoomUserFriendsDao
 
 }

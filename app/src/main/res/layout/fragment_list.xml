@@ -7,13 +7,12 @@
     android:background="#3E070F">
 
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/pic_person"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/person"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,65 +21,88 @@
         android:id="@+id/hey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pic_person"
-        android:text="Hey, Julia!"
-        android:letterSpacing="0.07"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="20dp"
-        android:textSize="30sp" />
+        android:layout_marginTop="15dp"
+        android:letterSpacing="0.07"
+        android:text="Hey!"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pic_person" />
 
     <TextView
         android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hey"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:text="Find the best songs"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hey" />
 
 
+    <FrameLayout
+        android:id="@id/search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/search_view_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hello">
 
 
-        <!--<com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_til_search"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:id="@+id/search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hello"
-            android:layout_marginStart="10dp"
-            app:boxStrokeWidth="2dp"
-            app:boxStrokeColor="@color/white"
-            android:textColorHint="@color/white"
-            app:hintTextColor="@color/white"
-            >-->
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            app:hintEnabled="false">
 
-            <!--<com.google.android.material.textfield.TextInputEditText
-
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+            <AutoCompleteTextView
+                android:id="@+id/actv_search"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Looking for..."
-                android:textSize="20sp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:completionThreshold="1"
+                android:drawableStart="@drawable/search"
+                android:drawablePadding="40dp"
+                android:dropDownWidth="340dp"
+                android:dropDownHeight="180dp"
+                android:dropDownHorizontalOffset="16dp"
+                android:hint="Enter book name"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp"
+                android:translationY="4dp"
+                app:iconifiedByDefault="false" />
 
-            android:drawableRight="@drawable/search"/>-->
-            <androidx.appcompat.widget.SearchView
-                android:id="@id/search"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hello"
-                />
 
-        <!--</com.google.android.material.textfield.TextInputLayout>-->
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="60dp"
+            android:background="@color/white" />
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/pb_search"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:indeterminateTint="@color/white"/>
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/linear1"
@@ -142,9 +164,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
             android:text="Pop"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pic_rock" />
 
@@ -177,10 +199,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
             android:text="Rap"
-            android:textStyle="bold"
+            android:textColor="@color/white"
 
             android:textSize="20dp"
-            android:textColor="@color/white"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pic_rock" />
 
@@ -191,26 +213,26 @@
         android:id="@+id/popular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear1"
-        android:text="Popular Now"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:letterSpacing="0.07"
-        android:textStyle="bold"
+        android:text="Popular Now"
         android:textColor="@color/white"
         android:textSize="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:clipToPadding="false"
         android:orientation="vertical"
         android:padding="16px"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="5dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/popular"

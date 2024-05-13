@@ -13,5 +13,5 @@ data class PopType (
     @ColumnInfo(name = "singer")
     val singer: String,
     @ColumnInfo(name = "image")
-    val image: String
+    val image: Int
 ): java.io.Serializable

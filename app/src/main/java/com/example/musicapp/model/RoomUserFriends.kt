@@ -5,13 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class RockType (
+data class RoomUserFriends (
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
+    @ColumnInfo(name = "user_id")
+    val user_id: String,
     @ColumnInfo(name = "name")
     val name: String,
-    @ColumnInfo(name = "singer")
-    val singer: String,
-    @ColumnInfo(name = "image")
-    val image: Int
-    ): java.io.Serializable
+    @ColumnInfo(name = "number")
+    val number: String
+): java.io.Serializable

@@ -2,23 +2,18 @@ package com.example.musicapp
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
-
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.musicapp.databinding.ItemNoteBinding
-import com.example.musicapp.model.RoomMusic
-import kotlinx.coroutines.NonDisposableHandle.parent
+import com.example.musicapp.model.PopType
 
-class MusicListAdapter(
-    private var items: MutableList<RoomMusic>,
-    private val itemClick: (RoomMusic) -> Unit
-) : RecyclerView.Adapter<MusicViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
+
+class MusicPopListAdapter(
+    private var items: MutableList<PopType>,
+    private val itemClick: (PopType) -> Unit
+) : RecyclerView.Adapter<PopViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return MusicViewHolder(
+        return PopViewHolder(
             binding = ItemNoteBinding.inflate(layoutInflater, parent, false),
             itemClick
         )
@@ -29,11 +24,11 @@ class MusicListAdapter(
         return items.size
     }
 
-    override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PopViewHolder, position: Int) {
         holder.bind(items[position], position)
     }
 
-    fun filterList(filteredList: ArrayList<RoomMusic>) {
+    fun filterList(filteredList: ArrayList<PopType>) {
         items = filteredList
         notifyDataSetChanged()
     }
@@ -41,17 +36,16 @@ class MusicListAdapter(
 
 }
 
-class MusicViewHolder(
+class PopViewHolder(
     private val binding: ItemNoteBinding,
-    private val itemClick: (RoomMusic) -> Unit
+    private val itemClick: (PopType) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(item: RoomMusic, position: Int) {
+    fun bind(item: PopType, position: Int) {
         binding.run {
             song.text = item.name
             pic.setImageResource(item.image)
             root.setOnClickListener {
                 itemClick(item)
-
             }
 
 

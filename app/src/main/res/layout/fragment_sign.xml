@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:text="Choose a photo"
                 android:textStyle="bold"
-                android:textColor="#71B1D9"
+                android:textColor="@color/white"
                 android:layout_marginTop="40dp"
                 android:layout_marginStart="20dp"
                 android:textSize="18sp"/>
@@ -62,7 +62,7 @@
 
             android:layout_height="wrap_content"
             android:hint="Email address"
-            android:textColorHint="#71B1D9"
+            android:textColorHint="@color/white"
             android:layout_marginTop="20dp"
             android:textSize="15sp"
             android:layout_gravity="center"
@@ -86,7 +86,7 @@
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:textColorHint="#71B1D9"
+            android:textColorHint="@color/white"
             android:textSize="24sp"
             android:layout_gravity="center"
             >
@@ -107,7 +107,7 @@
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:hint="Confirm password"
-            android:textColorHint="#71B1D9"
+            android:textColorHint="@color/white"
             android:textSize="24sp"
             android:layout_gravity="center"
             >

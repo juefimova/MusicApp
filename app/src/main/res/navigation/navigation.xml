@@ -19,7 +19,13 @@
     <fragment
         android:id="@+id/app"
         android:name="com.example.musicapp.ListFragment"
-        tools:layout="@layout/item_note">
+        tools:layout="@layout/fragment_list">
+
+
+
+        <action
+            android:id="@+id/to_song"
+            app:destination="@+id/song"/>
 
     </fragment>
 
@@ -43,6 +49,7 @@
         <action
             android:id="@+id/to_forgot"
             app:destination="@+id/forgot"/>
+
 
     </fragment>
 
@@ -70,6 +77,25 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/song"
+        android:name="com.example.musicapp.FragmentSong"
+        tools:layout="@layout/fragment_song">
+
+        <argument
+            android:name="key_counter1"
+            app:argType="com.example.musicapp.model.RockType"/>
+
+        <argument
+            android:name="key_counter2"
+            app:argType="com.example.musicapp.model.PopType"/>
+
+        <argument
+            android:name="key_counter3"
+            app:argType="com.example.musicapp.model.RapType"/>
+
+    </fragment>
+
     <dialog
         android:id="@+id/error_passwords"
         android:name="com.example.musicapp.CustomDialogErrorPassword"
@@ -94,5 +120,8 @@
         android:id="@+id/forgot"
         android:name="com.example.musicapp.CustomDialogForgot"
         tools:layout="@layout/dialog_forgot"/>
+
+
+
 
 </navigation>

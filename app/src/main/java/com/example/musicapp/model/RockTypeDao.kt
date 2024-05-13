@@ -8,8 +8,8 @@ interface RockTypeDao {
     fun getAll(): List<RockType>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertSongs(vararg songs: RoomMusic)
+    fun insertSongs(vararg songs: RockType)
 
     @Delete
-    fun deleteSong(song: RoomMusic)
+    fun deleteSong(song: RockType)
 }
