@@ -16,6 +16,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.musicapp.databinding.FragmentSongBinding
 import com.example.musicapp.model.*
@@ -26,6 +27,23 @@ class FragmentSong : Fragment() {
         get() = requireNotNull(_binding) {
             "null"
         }
+    private val databaseRock: RockTypeDao by lazy {
+        requireContext()
+            .appDatabase
+            .rockTypeDao()
+    }
+
+    private val databaseRap: RapTypeDao by lazy {
+        requireContext()
+            .appDatabase
+            .rapTypeDao()
+    }
+
+    private val dataBasePop: PopTypeDao by lazy {
+        requireContext()
+            .appDatabase
+            .popTypeDao()
+    }
 
     private val args by navArgs<FragmentSongArgs>()
 
@@ -136,6 +154,10 @@ class FragmentSong : Fragment() {
 
     }
 
+    private var adapterRock: MusicRockListAdapter? = null
+    private var adapterPop: MusicPopListAdapter? = null
+    private var adapterRap: MusicRapListAdapter? = null
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val counter1 = args.keyCounter1
@@ -143,6 +165,46 @@ class FragmentSong : Fragment() {
         val counter3 = args.keyCounter3
         binding.run {
 
+            description.setOnClickListener {
+                findNavController().navigate(
+                    FragmentSongDirections.toDescription(
+                        counter1, counter2, counter3
+                    )
+                )
+
+                /*Log.d("description", "clicked")
+                adapterRock = MusicRockListAdapter(databaseRock.getAll().toMutableList()) {
+                    findNavController().navigate(
+                        FragmentSongDirections.toDescription(
+                            it,
+                            PopType(0, "0", "0", 0, "0", "0", "0"),
+                            RapType(0, "0", "0", 0, "0", "0", "0")
+                        )
+                    )
+                }
+
+                adapterPop = MusicPopListAdapter(dataBasePop.getAll().toMutableList()) {
+                    findNavController().navigate(
+                        FragmentSongDirections.toDescription(
+                            RockType(0, "0", "0", 0, "0", "0", "0"),
+                            it,
+                            RapType(0, "0", "0", 0, "0", "0", "0")
+                        )
+                    )
+
+                }
+
+                adapterRap = MusicRapListAdapter(databaseRap.getAll().toMutableList()) {
+                    findNavController().navigate(
+                        FragmentSongDirections.toDescription(
+                            RockType(0, "0", "0", 0, "0", "0", "0"),
+                            PopType(0, "0", "0", 0, "0", "0", "0"),
+                            it
+                        )
+                    )
+                }*/
+
+            }
 
             share.setOnClickListener {
                 Intent(Intent.ACTION_SEND).apply {
@@ -168,19 +230,19 @@ class FragmentSong : Fragment() {
             }
 
 
-            if(counter2 == null && counter3 == null) {
+            if(counter2.id == 0.toLong() && counter3.id == 0.toLong()) {
                 name.text = counter1.name
                 singer.text = counter1.singer
                 pic.setImageResource(counter1.image)
             }
 
-            if(counter1 == null && counter3 == null) {
+            if(counter1.id == 0.toLong() && counter3.id == 0.toLong()) {
                 name.text = counter2.name
                 singer.text = counter2.singer
                 pic.setImageResource(counter2.image)
             }
 
-            if(counter1 == null && counter2 == null) {
+            if(counter1.id == 0.toLong() && counter2.id == 0.toLong()) {
                 name.text = counter3.name
                 singer.text = counter3.singer
                 pic.setImageResource(counter3.image)

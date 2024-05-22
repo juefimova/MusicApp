@@ -6,16 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.room.Room
 import com.example.musicapp.databinding.ItemSearchNoteBinding
-import com.example.musicapp.model.RoomMusic
+import com.example.musicapp.model.PopType
 
-class AutoCompleteAdapter (
+
+class AutoCompleteAdapterPop (
     context: Context,
-    itemsList: MutableList<RoomMusic>
-    ) : ArrayAdapter<RoomMusic>(context, 0, itemsList) {
+    itemsList: MutableList<PopType>
+) : ArrayAdapter<PopType>(context, 0, itemsList) {
 
-    private var itemsListFull: MutableList<RoomMusic> = itemsList
+    private var itemsListFull: MutableList<PopType> = itemsList
     private val inflater: LayoutInflater = LayoutInflater.from(context)
 
     override fun getView(
@@ -39,7 +39,7 @@ class AutoCompleteAdapter (
         return view
     }
 
-    fun filterList(filteredList: MutableList<RoomMusic>) {
+    fun filterList(filteredList: MutableList<PopType>) {
         itemsListFull = filteredList
         notifyDataSetChanged()
         Log.d("filterList on adapter", filteredList.toString())
@@ -49,7 +49,7 @@ class AutoCompleteAdapter (
         return itemsListFull.size
     }
 
-    override fun getItem(position: Int): RoomMusic? {
+    override fun getItem(position: Int): PopType? {
         return if (position >= 0 && position < itemsListFull.size) {
             itemsListFull[position]
         } else{
@@ -58,7 +58,4 @@ class AutoCompleteAdapter (
     }
 
 
-
-
-
-    }
+}

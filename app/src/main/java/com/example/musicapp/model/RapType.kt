@@ -13,5 +13,11 @@ data class RapType (
     @ColumnInfo(name = "singer")
     val singer: String,
     @ColumnInfo(name = "image")
-    val image: Int
+    val image: Int,
+    @ColumnInfo(name = "number")
+    val number: String,
+    @ColumnInfo(name = "description")
+    val description: String,
+    @ColumnInfo(name = "images")
+    val images: String
 ): java.io.Serializable

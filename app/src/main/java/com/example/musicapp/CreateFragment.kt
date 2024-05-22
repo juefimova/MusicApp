@@ -79,7 +79,7 @@ class CreateFragment: Fragment() {
                     } else {
 
                         findNavController().navigate(
-                            CreateFragmentDirections.toErrorPassword()
+                            CreateFragmentDirections.toCreated()
                         )
                     }
                 }

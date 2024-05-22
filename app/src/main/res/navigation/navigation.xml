@@ -93,7 +93,28 @@
         <argument
             android:name="key_counter3"
             app:argType="com.example.musicapp.model.RapType"/>
+        <action
+            android:id="@+id/to_description"
+            app:destination="@id/description"/>
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/description"
+        android:name="com.example.musicapp.FragmentDescription"
+        tools:layout="@layout/fragment_singer">
+
+        <argument
+            android:name="key_counter1"
+            app:argType="com.example.musicapp.model.RockType"/>
+
+        <argument
+            android:name="key_counter2"
+            app:argType="com.example.musicapp.model.PopType"/>
+
+        <argument
+            android:name="key_counter3"
+            app:argType="com.example.musicapp.model.RapType"/>
     </fragment>
 
     <dialog
