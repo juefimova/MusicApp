@@ -56,31 +56,33 @@ class CreateFragment: Fragment() {
                 val user = dataBase
                     .findByName(email, password)
 
-                if(user == null) {
+                if(user != null) {
                     findNavController().navigate(
                         CreateFragmentDirections.toToErrorEmail()
                     )
-                    if(confirm == password) {
+                }
+
+                else {
+
+
+                    if (confirm == password) {
                         val fEmail = email1.text.toString()
                         val lPassword = password1.text.toString()
                         val lConfirm = confirm1.text.toString()
                         Log.d("text", "$fEmail $lPassword, $lConfirm")
                         dataBase
                             .insertAll(RoomUser(email = fEmail, password = lPassword))
+
                         rebuildResult()
-
-                        /*findNavController().navigate(
-                            FragmentCreateDirections.toClick7()
-                        )*/
-                        /*parentFragmentManager.setFragmentResult(
-                            "result",
-                            bundleOf("email" to email, "password" to password)
-                        )*/
-                    } else {
-
                         findNavController().navigate(
                             CreateFragmentDirections.toCreated()
                         )
+
+                    } else {
+                        findNavController().navigate(
+                            CreateFragmentDirections.toErrorPassword()
+                        )
+
                     }
                 }
 

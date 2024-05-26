@@ -3,17 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#3E070F"
+    android:background="@color/black"
     android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="250dp"
 
+
+        android:src="@drawable/img_8"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="10dp">
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -23,33 +31,7 @@
             android:textStyle="bold"
             android:textSize="26sp"
             android:layout_gravity="center"
-            android:layout_marginBottom="30dp"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_marginTop="20dp"
-                android:id="@+id/pic_person"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="20dp"
-                android:src="@drawable/person"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Choose a photo"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_marginTop="40dp"
-                android:layout_marginStart="20dp"
-                android:textSize="18sp"/>
-
-        </LinearLayout>
+            android:layout_marginBottom="15dp"/>
 
 
 
@@ -66,12 +48,15 @@
             android:layout_marginTop="20dp"
             android:textSize="15sp"
             android:layout_gravity="center"
+
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -94,7 +79,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -115,7 +101,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirm1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -165,6 +152,7 @@
             android:text="Log in"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
+            android:textColor="@color/white"
             android:textSize="15sp"
             />
 

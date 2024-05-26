@@ -2,59 +2,62 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3E070F"
-    android:orientation="vertical">
+    android:background="@drawable/img_11"
+    android:orientation="vertical"
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/pic_person"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_gravity="center"
-        android:src="@drawable/pic_vinyl"
-        android:layout_marginTop="40dp"
-        />
+    >
+
+
+    <!--<ImageView
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+
+
+        android:src="@drawable/img_11"
+        />-->
+
 
     <TextView
         android:id="@+id/headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="250dp"
         android:text="Log in"
-        android:textColor="#BBBDF2"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="249dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:layout_marginStart="20dp">
+        android:orientation="vertical">
 
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+
             android:layout_marginTop="30dp"
             android:hint="Email address"
-            android:textColorHint="@color/white"
-            />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+
             android:layout_marginTop="30dp"
             android:hint="Password"
-            android:textColorHint="@color/white"
-            />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
     </LinearLayout>
-
 
     <TextView
         android:id="@+id/btn_login"
@@ -62,18 +65,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30sp"
-        android:background="@drawable/text_color_login"
-        android:paddingStart="30dp"
+        android:background="@drawable/text_color"
+        android:backgroundTint="@color/white"
+        android:textColor="#020659"
+        android:paddingStart="100dp"
         android:paddingTop="5dp"
-        android:paddingEnd="30dp"
+        android:paddingEnd="100dp"
         android:paddingBottom="5dp"
         android:text="Log in"
-        android:textColor="#4A1459"
-        android:textSize="25sp"
+
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
@@ -83,6 +88,7 @@
             android:layout_height="wrap_content"
             android:text="Don't have an account?"
             android:textSize="15sp"
+
             android:textColor="@color/white"
             android:layout_marginEnd="20dp"
             />
