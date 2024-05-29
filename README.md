@@ -8,17 +8,15 @@ This is a music store application built with Kotlin that allows users to browse 
    
 2. **Login and Registration:** Users can log in to their accounts or register for a new account.
 
-3. **User Profile:** Users can view and update their profile information.
+3. **Music Listing:** Users can browse a list of available songs in the store, with search and sorting functionality.
 
-4. **Music Listing:** Users can browse a list of available songs in the store, with search and sorting functionality.
+4. **Song Details:** Clicking on a song will display its details.
 
-5. **Song Details:** Clicking on a song will display its details.
+5. **Contact Sharing:** Users can share songs with their friends via SMS using their device's contacts.
 
-6. **Contact Sharing:** Users can share songs with their friends via SMS using their device's contacts.
+6. **Artist Information:** Users can view information about the artist of a song.
 
-7. **Artist Information:** Users can view information about the artist of a song.
-
-8. **Search and Sort:** Users can search for songs using the AutoCompleteTextView and sort them by genres such as Rock, Pop, and Rap.
+7. **Search and Sort:** Users can search for songs using the AutoCompleteTextView and sort them by genres such as Rock, Pop, and Rap.
 
 
 ## Installation  
